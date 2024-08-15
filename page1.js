@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     auth.onAuthStateChanged((user) => {
         if (!user) {
             // User is not logged in, redirect to the index page
-            location.href = "index.html";
+            location.href = "/index.html";
         }
     });
 
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         auth.signOut()
             .then(() => {
                 console.log('User signed out successfully');
-                location.href = "index.html";
+                location.href = "/index.html";
             })
             .catch((error) => {
                 alert('Error signing out: ' + error.message);
