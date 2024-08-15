@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Bloggs Login</title>
+    <link
+      rel="icon"
+      href="https://cdn-icons-png.freepik.com/256/12884/12884567.png?semt=ais_hybrid"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="flex items-center justify-center h-screen bg-[#1F2630]">
+    <div
+      class="container flex w-full max-w-4xl bg-white shadow-lg rounded-lg overflow-hidden"
+    >
+      <!-- Side Panel -->
+      <div class="w-1/2 bg-black flex flex-col justify-center items-center p-8">
+        <div class="text-center">
+          <img
+            src="https://cdn-icons-png.freepik.com/256/12884/12884567.png?semt=ais_hybrid"
+            alt="Bird Illustration"
+            class="w-3/4 mx-auto mb-6"
+          />
+          <p class="text-gray-50 text-lg mb-2">Welcome to Bloggs</p>
+          <p class="text-gray-200">Get started by creating an account</p>
+        </div>
+      </div>
+
+      <!-- Login Panel -->
+      <div class="w-1/2 p-10 flex flex-col justify-center">
+        <!-- Login Form -->
+        <div class="mb-8">
+          <h1 class="text-3xl font-bold text-gray-800">Bloggs</h1>
+          <p class="text-gray-600 mt-2">Welcome to Bloggs</p>
+        </div>
+        <div id="loginForm" class="block">
+          <form action="#">
+            <input
+              type="text"
+              id="inUsr"
+              placeholder="Email"
+              class="w-full p-3 border border-gray-300 rounded-lg mb-4"
+            />
+            <input
+              type="password"
+              id="inPass"
+              placeholder="Password"
+              class="w-full p-3 border border-gray-300 rounded-lg mb-2"
+            />
+            <a
+              href="#"
+              id="forgotLabel"
+              class="text-sm text-blue-500 hover:underline text-right block mb-4"
+              >Forgot password?</a
+            >
+            <button
+              type="button"
+              class="w-full bg-gray-800 text-white py-3 rounded-lg hover:bg-gray-900 transition-colors loginbtn"
+            >
+              Sign in
+            </button>
+          </form>
+          <div class="mt-6 text-center">
+            <p class="text-gray-600">
+              New to Bloggs?
+              <a href="#" id="signupLabel" class="text-blue-500 hover:underline"
+                >Create Account</a
+              >
+            </p>
+          </div>
+        </div>
+
+        <!-- Signup Form -->
+        <div id="signupForm" class="hidden">
+          <form action="#">
+            <input
+              type="text"
+              id="name"
+              placeholder="Enter your name"
+              class="w-full p-3 border border-gray-300 rounded-lg mb-4"
+            />
+            <input
+              type="text"
+              id="username"
+              placeholder="Enter your username"
+              class="w-full p-3 border border-gray-300 rounded-lg mb-4"
+            />
+            <input
+              type="text"
+              id="email"
+              placeholder="Enter your email"
+              class="w-full p-3 border border-gray-300 rounded-lg mb-4"
+            />
+            <input
+              type="password"
+              id="password"
+              placeholder="Create a password"
+              class="w-full p-3 border border-gray-300 rounded-lg mb-4"
+            />
+            <button
+              type="button"
+              class="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition-colors signupbtn"
+            >
+              Sign up
+            </button>
+          </form>
+          <p class="text-gray-600 mt-4 text-center">
+            Already have an account?
+            <a href="#" id="loginLabel" class="text-blue-500 hover:underline"
+              >Login</a
+            >
+          </p>
+        </div>
+
+        <!-- Forgot Password Form -->
+        <div id="forgotForm" class="hidden">
+          <form action="#">
+            <input
+              type="text"
+              id="forgotinp"
+              placeholder="Enter your email"
+              class="w-full p-3 border border-gray-300 rounded-lg mb-4"
+            />
+            <button
+              type="button"
+              class="w-full bg-yellow-500 text-white py-3 rounded-lg hover:bg-yellow-600 transition-colors forgotbtn"
+            >
+              Submit
+            </button>
+          </form>
+          <div class="mt-6 text-center">
+            <p class="text-gray-600">
+              New to Bloggs?
+              <a href="#" id="signupLabel" class="text-blue-500 hover:underline"
+                >Create Account</a
+              >
+            </p>
+            <p class="text-gray-600 mt-2">
+              Already have an account?
+              <a href="#" id="loginLabel" class="text-blue-500 hover:underline"
+                >Login</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="page0.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bloggs Dashboard</title>
+    <link
+      rel="icon"
+      href="https://cdn-icons-png.freepik.com/256/12884/12884567.png?semt=ais_hybrid"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 h-screen flex">
+    <!-- Sidebar -->
+    <aside
+      class="bg-black w-64 h-full shadow-lg text-white hidden sm:flex flex-col p-3 w-64 lg:w-72"
+    >
+      <!-- Logo Section -->
+      <div class="flex items-center space-x-2 mb-10">
+        <img
+          src="https://cdn-icons-png.freepik.com/256/12884/12884567.png?semt=ais_hybrid"
+          alt="BookHive Logo"
+          class="w-8 h-8"
+        />
+        <span class="text-xl font-semibold text-gray-800"
+          ><span class="text-red-500">Bloggs</span></span
+        >
+      </div>
+
+      <!-- Menu Items -->
+      <nav class="flex-1 flex flex-col h-full justify-between">
+        <div class="space-y-2">
+          <a
+            href="/dashboard.html"
+            class="flex items-center p-3 rounded-lg pointer-events-none bg-gray-900 text-gray-300 hover:bg-gray-800"
+          >
+            <i data-lucide="house" class="h-6 w-6"></i>
+            <span class="ml-3">Home</span>
+          </a>
+          <a
+            href="/pages/notifications.html"
+            class="flex items-center p-3 text-gray-600 hover:bg-gray-900 rounded-lg"
+          >
+            <i data-lucide="bell" class="lucide lucide-bell h-6 w-6"></i>
+            <span class="ml-3">Notification</span>
+            <span
+              class="ml-auto bg-red-500 text-white text-xs font-medium inline-flex items-center justify-center h-5 w-5 rounded-full"
+              >2</span
+            >
+          </a>
+          <a
+            href="/pages/popular.html"
+            class="flex items-center p-3 text-gray-600 hover:bg-gray-900 rounded-lg"
+          >
+            <i data-lucide="star" class="lucide lucide-star h-6 w-6"></i>
+            <span class="ml-3">Popular</span>
+          </a>
+          <a
+            href="/pages/archive.html"
+            class="flex items-center p-3 text-gray-600 hover:bg-gray-900 rounded-lg"
+          >
+            <i data-lucide="archive" class="lucide lucide-archive h-6 w-6"></i>
+            <span class="ml-3">Archive</span>
+          </a>
+          <a
+            href="/pages/blog.html"
+            class="flex items-center p-3 text-gray-600 hover:bg-gray-900 rounded-lg"
+          >
+            <i
+              data-lucide="file-pen-line"
+              class="lucide lucide-book-open h-6 w-6"
+            ></i>
+            <span class="ml-3">Blog</span>
+          </a>
+          <a
+            href="/pages/contact.html"
+            class="flex items-center p-3 text-gray-600 hover:bg-gray-900 rounded-lg"
+          >
+            <i data-lucide="phone" class="lucide lucide-phone h-6 w-6"></i>
+            <span class="ml-3">Contact</span>
+          </a>
+          <a
+            href="/pages/about.html"
+            class="flex items-center p-3 text-gray-600 hover:bg-gray-900 rounded-lg"
+          >
+            <i data-lucide="info" class="lucide lucide-info h-6 w-6"></i>
+            <span class="ml-3">About</span>
+          </a>
+          <a
+            href="/pages/settings.html"
+            class="flex items-center p-3 text-gray-600 hover:bg-gray-900 rounded-lg"
+          >
+            <i
+              data-lucide="settings"
+              class="lucide lucide-settings h-6 w-6"
+            ></i>
+            <span class="ml-3">Settings</span>
+          </a>
+        </div>
+        <a
+          href="#"
+          id="signoutbtn"
+          class="flex items-center p-3 rounded-lg bg-red-700 text-gray-300 hover:bg-red-500"
+        >
+          <i data-lucide="log-out" class="h-6 w-6"></i>
+          <span class="ml-3">Logout</span>
+        </a>
+      </nav>
+
+      <!-- Additional options -->
+      <div class="flex items-center justify-between mt-auto">
+        <button class="text-gray-600 hover:text-gray-900">
+          <i class="lucide lucide-menu h-6 w-6"></i>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="bg-[#1F2630] flex-1 flex flex-col bg-gray-50 overflow-y-scroll">
+      <!-- Header Section -->
+      <div
+        class="bg-[#1F2630] text-white w-full shadow-lg p-4 flex gap-4 sm:flex-row flex-col items-center juc sm:justify-between"
+      >
+        <div class="sm:hidden flex items-center space-x-2 mb-4 mt-4">
+          <img
+            src="https://cdn-icons-png.freepik.com/256/12884/12884567.png?semt=ais_hybrid"
+            alt="BookHive Logo"
+            class="w-8 h-8"
+          />
+          <span class="text-xl font-semibold text-gray-800"
+            ><span class="text-red-500">Bloggs</span></span
+          >
+        </div>
+        <!-- Search Bar -->
+        <div
+          class="flex items-center w-full md:w-2/3 bg-[#202936] rounded-lg overflow-hidden"
+        >
+          <input
+            type="text"
+            placeholder="Search..."
+            class="bg-[#202936] text-gray-300 px-4 py-2 flex-grow focus:outline-none"
+          />
+          <button
+            class="bg-gray-700 hover:bg-gray-600 p-3 flex items-center justify-center"
+          >
+            <i
+              data-lucide="search"
+              class="lucide lucide-search h-5 w-5 text-gray-300"
+            ></i>
+          </button>
+        </div>
+
+        <!-- User Profile Section -->
+        <div class="hidden sm:flex items-center space-x-4">
+          <img
+            src="https://static.vecteezy.com/system/resources/previews/004/819/327/original/male-avatar-profile-icon-of-smiling-caucasian-man-vector.jpg"
+            alt="User Avatar"
+            class="w-10 h-10 rounded-full"
+          />
+        </div>
+      </div>
+
+      <!-- Main Content Area -->
+      <main class="p-6 space-y-6 bg-[#1F2630]">
+        <section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+          <div class="md:col-span-2 xl:col-span-3 flex w-full gap-6 flex-col">
+            <!-- Top Trending Article Section -->
+            <div class="bg-[#1F2630] text-white rounded-xl shadow-lg w-full">
+              <h3 class="text-lg font-semibold mb-6">Top Trending Article</h3>
+              <div
+                class="bg-[#202936] rounded-lg overflow-hidden shadow-md flex flex-col md:flex-row"
+              >
+                <!-- Left Side - Text Content -->
+                <div
+                  class="p-8 flex-1 bg-gradient-to-r from-gray-900 via-gray-800 to-transparent"
+                >
+                  <h3 class="text-2xl font-semibold text-white mb-8">
+                    From Lens to Screen: The Art of Captivating Storytelling
+                    Through Videography
+                  </h3>
+                  <p class="text-gray-400 mb-8">
+                    Master visual storytelling with 'From Lens to Screen'.
+                    Create captivating videos with expert camera techniques,
+                    shot composition, and editing.
+                  </p>
+                  <a
+                    href="#"
+                    class="inline-block border border-white text-white px-8 py-2 rounded-lg hover:bg-black hover:border-black transition-colors"
+                  >
+                    Read Now
+                  </a>
+                </div>
+                <!-- Right Side - Image -->
+                <div
+                  class="flex-1 bg-cover bg-center h-64 md:h-auto"
+                  style="
+                    background-image: url('https://miro.medium.com/v2/resize:fit:875/0*PMwiSkHCot2GhkXx.png');
+                  "
+                >
+                  <!-- Decorative overlay can be added if needed -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Match for You Section -->
+            <div class="bg-[#1F2630] text-white rounded-xl py-6 w-full">
+              <h3 class="text-lg font-semibold mb-6">Match for You</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- First Article Card -->
+                <div
+                  class="bg-[#202936] rounded-lg p-3 border border-gray-300 overflow-hidden shadow-md"
+                >
+                  <img
+                    src="https://img.freepik.com/premium-photo/unveiling-art-video-production-techniques-tools-creativity-visual-storytelling_892235-23641.jpg"
+                    alt="Beyond the Frame"
+                    class="w-full h-64 object-cover rounded-lg"
+                  />
+                  <div class="pt-4">
+                    <h4 class="text-base font-semibold">
+                      Beyond the Frame: The Art and Technique of Videography
+                    </h4>
+                    <p class="text-gray-400 text-sm mt-2 mb-4">
+                      Elevate your videography master camera operation,
+                      lighting, audio, and editing.
+                    </p>
+                    <div class="flex items-center text-gray-400 text-xs">
+                      <img
+                        src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1723680000&semt=ais_hybrid"
+                        alt="Rina Kim"
+                        class="w-6 h-6 rounded-full mr-2"
+                      />
+                      <span>by Rina Kim · 7 min reads</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Second Article Card -->
+                <div
+                  class="bg-[#202936] rounded-lg p-3 border border-gray-300 overflow-hidden shadow-md"
+                >
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwp8rACKIz2PY8fDpT7nGapMM2eoSgZWBQsQ&s"
+                    alt="Mastering UI/UX Design"
+                    class="w-full h-64 object-cover rounded-lg"
+                  />
+                  <div class="pt-4">
+                    <h4 class="text-base font-semibold">
+                      Mastering UI/UX Design: Creating Engaging Digital
+                      Interfaces
+                    </h4>
+                    <p class="text-gray-400 text-sm mt-2 mb-4">
+                      Learn to create visually pleasing and user-friendly
+                      digital experiences.
+                    </p>
+                    <div class="flex items-center text-gray-400 text-xs">
+                      <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGx5U8Dq86k3xqaA5rHdeV2zsCOFLbzJmQY8WQ9N98h0IHYkP1JIZCyaccDPmIMpKCSjQ&usqp=CAU"
+                        alt="Fatimah"
+                        class="w-6 h-6 rounded-full mr-2"
+                      />
+                      <span>by Fatimah · 10 min reads</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-span-1 md:col-span-2 xl:col-span-1 flex w-full gap-2 flex-col"
+          >
+            <!-- Recommended for You Box -->
+            <div
+              class="bg-[#1F2630] text-white rounded-xl shadow-lg p-6 w-full border border-gray-500"
+            >
+              <div class="flex justify-between items-center mb-4">
+                <h3 class="text-sm font-semibold">Recommended for you</h3>
+                <a href="#" class="text-sm text-gray-400 hover:underline"
+                  >View all</a
+                >
+              </div>
+              <div class="space-y-4">
+                <!-- User 1 -->
+                <div class="flex justify-between items-center">
+                  <div class="flex items-center space-x-3">
+                    <img
+                      src="https://png.pngtree.com/png-clipart/20230927/original/pngtree-man-avatar-image-for-profile-png-image_13001877.png"
+                      alt="Kazuo Nakamura"
+                      class="w-10 h-10 rounded-full"
+                    />
+                    <span class="text-xs">Kazuo Nakamura</span>
+                  </div>
+                  <button
+                    class="bg-transparent text-gray-400 text-sm border border-gray-600 px-4 py-1 rounded-full hover:bg-gray-700 hover:border-gray-500 hover:text-white transition-colors"
+                  >
+                    Follow
+                  </button>
+                </div>
+
+                <!-- User 2 -->
+                <div class="flex justify-between items-center">
+                  <div class="flex items-center space-x-3">
+                    <img
+                      src="https://static.vecteezy.com/system/resources/previews/004/819/327/original/male-avatar-profile-icon-of-smiling-caucasian-man-vector.jpg"
+                      alt="Anusha Patel"
+                      class="w-10 h-10 rounded-full"
+                    />
+                    <span class="text-xs">Anusha Patel</span>
+                  </div>
+                  <button
+                    class="bg-transparent text-gray-400 text-sm border border-gray-600 px-4 py-1 rounded-full hover:bg-gray-700 hover:border-gray-500 hover:text-white transition-colors"
+                  >
+                    Follow
+                  </button>
+                </div>
+
+                <!-- User 3 -->
+                <div class="flex justify-between items-center">
+                  <div class="flex items-center space-x-3">
+                    <img
+                      src="https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg"
+                      alt="Tuan Nguyen"
+                      class="w-10 h-10 rounded-full"
+                    />
+                    <span class="text-xs">Tuan Nguyen</span>
+                  </div>
+                  <button
+                    class="bg-white text-gray-800 text-sm border border-gray-300 px-4 py-1 rounded-full hover:bg-gray-100 transition-colors"
+                  >
+                    Following
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Continue Reading Box -->
+            <div
+              class="bg-[#1F2630] text-white rounded-xl shadow-lg p-6 w-full border border-gray-500"
+            >
+              <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-semibold">Continue Reading</h3>
+                <a href="#" class="text-sm text-gray-400 hover:underline"
+                  >View all</a
+                >
+              </div>
+              <div class="space-y-8">
+                <!-- Article 1 -->
+                <div>
+                  <h4 class="text-sm font-semibold text-white">
+                    The Power of Music: Exploring the Art, Science, and Impact
+                    of Sound
+                  </h4>
+                  <div class="flex items-center text-gray-400 text-xs mt-1">
+                    <img
+                      src="https://img.freepik.com/free-psd/3d-illustration-bald-person-with-glasses_23-2149436184.jpg"
+                      alt="Djunianto Hadi"
+                      class="w-6 h-6 rounded-full mr-2"
+                    />
+                    <span>by Djunianto Hadi · 9 min reads</span>
+                  </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div>
+                  <h4 class="text-sm font-semibold text-white">
+                    The Rise of Esports: Exploring the World of Competitive
+                    Video Gaming
+                  </h4>
+                  <div class="flex items-center text-gray-400 text-xs mt-1">
+                    <img
+                      src="https://img.freepik.com/free-psd/3d-illustration-person-with-glasses_23-2149436190.jpg"
+                      alt="Mei-Ling Chen"
+                      class="w-6 h-6 rounded-full mr-2"
+                    />
+                    <span>by Mei-Ling Chen · 8 min reads</span>
+                  </div>
+                </div>
+
+                <!-- Article 3 -->
+                <div>
+                  <h4 class="text-sm font-semibold text-white">
+                    The Multifaceted Benefits and Impact of Video Gaming
+                  </h4>
+                  <div class="flex items-center text-gray-400 text-xs mt-1">
+                    <img
+                      src="https://img.freepik.com/premium-psd/teacher-3d-icon-avatar-people_431668-1616.jpg"
+                      alt="Nguyen Minh Duc"
+                      class="w-6 h-6 rounded-full mr-2"
+                    />
+                    <span>by Nguyen Minh Duc · 12 min reads</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Interesting Topic Box -->
+            <div
+              class="bg-[#1F2630] text-white rounded-xl shadow-lg p-6 border border-gray-500"
+            >
+              <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-semibold">Interesting Topic</h3>
+                <a href="#" class="text-sm text-gray-400 hover:underline"
+                  >View all</a
+                >
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm"
+                  >Social Media</span
+                >
+                <span
+                  class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm"
+                  >Music</span
+                >
+                <span
+                  class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm"
+                  >Sport</span
+                >
+                <span
+                  class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm"
+                  >Photography</span
+                >
+                <span
+                  class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm"
+                  >Videography</span
+                >
+                <span
+                  class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm"
+                  >UI/UX</span
+                >
+                <span
+                  class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm"
+                  >Graphic Design</span
+                >
+                <span
+                  class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm"
+                  >Esport</span
+                >
+                <span
+                  class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm"
+                  >Gaming</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="page1.js" type="module"></script>
+  </body>
+</html>
